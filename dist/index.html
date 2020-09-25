@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
@@ -17,12 +17,23 @@
     <div id="navbarSupportedContent">
       <form class="form-inline my-2 my-lg-0" id='formsearch'>
         <input class="form-control mr-sm-2" type="search" placeholder="City name" aria-label="Search" id="textsearch">
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="celcius">
+          <label class="form-check-label" for="inlineRadio1">Celsius</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="fahrenheit">
+          <label class="form-check-label" for="inlineRadio2">Fahrenheit</label>
+        </div>
+
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id='searchSubmit'>Search</button>
       </form>
     </div>
   </nav>
   <div id="container-div">
-    <img src="#" class="giphy-img"/>
+    <img src="#" class="giphy-img" />
     <div id="weather-container" class="weather-container">
 
     </div>
@@ -41,12 +52,3 @@
 </body>
 
 </html>
-
-
-
-<!-- <form id="frmSearch" class="search2" method="get" action="default.html" />
-<input class="search2" id="txtSearch" type="text" name="serach_bar" size="31" maxlength="255" value=""
-  style="left: 396px; top: 153px; width: 293px; height: 26px;" />
-<input class="search1" type="submit" name="submition" value="Search" style=" padding-  
-bottom:20px; left: 691px; top: 153px; height: 23px" />
-<input class="search2" type="hidden" name="sitesearch" value="default.html" /> -->

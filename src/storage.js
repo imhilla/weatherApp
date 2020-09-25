@@ -17,9 +17,16 @@ const addAndDisplay = (() => {
   document.getElementById('formsearch').onsubmit = function () {
     let text = document.getElementById('textsearch').value;
     searchLocation.push(text)
+    if (document.getElementById('inlineRadio1').checked) {
+      let celsius = document.getElementById('inlineRadio1').value;
+      console.log(celsius)
+    } else if (document.getElementById('inlineRadio2').checked) {
+     let fahrenheit = document.getElementById('inlineRadio2').value;
+      console.log(fahrenheit)
+    }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
-    window.location.reload
-    return false;
+    // window.location.reload
+    return false
   }
 
   return {

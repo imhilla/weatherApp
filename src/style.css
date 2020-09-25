@@ -13,7 +13,7 @@ body {
 
 .giphy-img {
   position: absolute;
-  height: 91vh;
+  height: 90vh;
   width: 100vw;
   overflow-y: hidden;
   z-index: -20;
