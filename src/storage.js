@@ -34,8 +34,7 @@ const addAndDisplay = (() => {
       localStorage.setItem('unit', JSON.stringify(unit));
     }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
-    // window.location.reload
-    return false
+    window.location.reload
   }
 
   return {
