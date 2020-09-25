@@ -1,7 +1,17 @@
 const weather = (() => {
   async function getLocation() {
-    const locations = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 1)))
+    const locations = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 2)))
+    const units = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 1)))
+    const actualUnit = units[units.length - 1]
     var actualLocation = locations[locations.length - 1]
+    console.log(actualLocation)
+    console.log(actualUnit)
+    let unitOfMes
+    if (actualUnit == celsius) {
+      unitOfMes = 'units=metric'
+    } else if (actualUnit == fahrenheit) {
+      unitOfMes = 'units=imperial'
+    }
     const feedBack = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${actualLocation}&appid=a575049b71ed2b88749a1f238d71e50b`, { mode: 'cors' });
     const weatherData = await feedBack.json();
     var data = weatherData
