@@ -5,29 +5,25 @@ localStorage.setItem('searched', JSON.stringify(searchLocation));
 JSON.parse(localStorage.getItem('searched'));
 
 const defaultLocal = () => {
-  searchLocation.pop()
-  searchLocation.push('Nairobi')
-}
-
-async function clearPage() {
-  if (window.location.reload) {
-    localStorage.clear();
+  if (searchLocation.length < 1) {
+    searchLocation.push('Nairobi')
+    console.log(searchLocation)
+    localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
 }
-
-clearPage().then(defaultLocal())
+defaultLocal()
 
 const addAndDisplay = (() => {
-  document.getElementById('formsearch').onsubmit = function (e) {
+  document.getElementById('formsearch').onsubmit = function () {
     let text = document.getElementById('textsearch').value;
     searchLocation.push(text)
     localStorage.setItem('searched', JSON.stringify(searchLocation));
-    e.preventDefault()
+    window.location.reload
     return false;
   }
 
   return {
-    defaultLocal, clearPage
+    defaultLocal
   };
 
 })();
