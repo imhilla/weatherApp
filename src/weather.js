@@ -1,6 +1,10 @@
 const weather = (() => {
   async function getLocation() {
-    const feedBack = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=a575049b71ed2b88749a1f238d71e50b', { mode: 'cors' });
+    const location = localStorage.searched
+    console.log(JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 1))))
+    var actualLocation = 'Nairobi'
+    // console.log(actualLocation)
+    const feedBack = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${actualLocation}&appid=a575049b71ed2b88749a1f238d71e50b`, { mode: 'cors' });
     const weatherData = await feedBack.json();
     var data = weatherData
     const dataDesc = data.weather[0]

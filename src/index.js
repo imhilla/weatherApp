@@ -5,4 +5,3 @@ import weather from './weather'
 import {getLocation} from './weather';
 
 
-// const getLocationData = getLocation();
