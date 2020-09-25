@@ -1,0 +1,42 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.container-div {
+  position: relative;
+}
+
+.giphy-img {
+  position: absolute;
+  height: 91vh;
+  width: 100vw;
+  overflow-y: hidden;
+  z-index: -20;
+}
+
+.sub-container p {
+  margin-left: 5px;
+}
+
+.weather-container {
+  display: flex;
+  width: 100vw;
+  height: auto;
+}
+.sub-container {
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-color: black;
+  padding: 2em;
+  margin-top: 2em;
+  opacity: 0.6;
+}

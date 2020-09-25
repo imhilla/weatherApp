@@ -1,0 +1,30 @@
+{
+  "name": "weatherApp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imhilla/weatherApp.git"
+  },
+  "keywords": [],
+  "author": "Hillary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imhilla/weatherApp/issues"
+  },
+  "homepage": "https://github.com/imhilla/weatherApp#readme",
+  "devDependencies": {
+    "css-loader": "^4.3.0",
+    "csv-loader": "^3.0.3",
+    "file-loader": "^6.1.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "xml-loader": "^1.2.1"
+  }
+}
