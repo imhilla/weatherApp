@@ -19,47 +19,46 @@ localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
 const clear = () => {
-  if (sessionStorage.length == 0) {
-    localStorage.clear()
+  if (sessionStorage.length === 0) {
+    localStorage.clear();
   }
-}
+};
 
-clear()
+clear();
 
 const defaultLocal = () => {
   if (unit.length < 1) {
-    unit.push('celsius')
-    searchLocation.push('Nairobi')
-    desc.push('clouds')
+    unit.push('celsius');
+    searchLocation.push('Nairobi');
+    desc.push('clouds');
     localStorage.setItem('desc', JSON.stringify(desc));
     localStorage.setItem('unit', JSON.stringify(unit));
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
-}
+};
 
-defaultLocal()
+defaultLocal();
 
-sessionStorage.setItem("greetings", "Hello there!");
+sessionStorage.setItem('greetings', 'Hello there!');
 
 const addAndDisplay = (() => {
-  document.getElementById('formsearch').onsubmit = function () {
-    let text = document.getElementById('textsearch').value;
-    searchLocation.push(text)
+  document.getElementById('formsearch').onsubmit = () => {
+    const text = document.getElementById('textsearch').value;
+    searchLocation.push(text);
     if (document.getElementById('inlineRadio1').checked) {
-      let celsius = document.getElementById('inlineRadio1').value;
-      unit.push(celsius)
+      const celsius = document.getElementById('inlineRadio1').value;
+      unit.push(celsius);
       localStorage.setItem('unit', JSON.stringify(unit));
     } else if (document.getElementById('inlineRadio2').checked) {
-      let fahrenheit = document.getElementById('inlineRadio2').value;
-      unit.push(fahrenheit)
+      const fahrenheit = document.getElementById('inlineRadio2').value;
+      unit.push(fahrenheit);
       localStorage.setItem('unit', JSON.stringify(unit));
     }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
-    window.location.reload
-  }
+  };
 
   return {
-    defaultLocal
+    defaultLocal,
   };
 
 })();
