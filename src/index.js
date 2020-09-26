@@ -1,20 +1,20 @@
 import './style.css';
-import addAndDisplay from './storage'
-import weather from './weather'
-import { getLocation } from './weather';
-import giphy from './giphy'
-
-const divLoad = document.getElementById('onLoad')
-divLoad.addEventListener('load', preLoad)
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
+import addAndDisplay from './storage';
+import weather from './weather';
+import giphy from './giphy';
 
 var myVar;
+
+function showPage() {
+  document.getElementById('loader').style.display = 'none';
+  document.getElementById('myDiv').style.display = 'block';
+}
+
 function preLoad() {
   myVar = setTimeout(showPage, 2000);
 }
 
-preLoad()
+const divLoad = document.getElementById('onLoad');
+divLoad.addEventListener('load', preLoad);
+
+preLoad();
