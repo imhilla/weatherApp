@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars, prefer-destructuring */
+/* eslint-disable no-undef, import/no-extraneous-dependencies */
 import './style.css';
 import addAndDisplay from './storage';
 import weather from './weather';
 import giphy from './giphy';
 
-var myVar;
+let myVar;
 
 function showPage() {
   document.getElementById('loader').style.display = 'none';
@@ -18,3 +20,5 @@ const divLoad = document.getElementById('onLoad');
 divLoad.addEventListener('load', preLoad);
 
 preLoad();
+/* eslint-enable no-unused-vars, prefer-destructuring */
+/* eslint-enable no-undef, import/no-extraneous-dependencies */
