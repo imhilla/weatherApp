@@ -18,8 +18,17 @@ const desc = localStorage.getItem('desc')
 localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
+
+const clear = () => {
+  if (sessionStorage.length == 0) {
+    localStorage.clear()
+  }
+}
+
+clear()
+
 const defaultLocal = () => {
-  if (localStorage.length < 1) {
+  if (unit.length < 1) {
     unit.push('celsius')
     searchLocation.push('Nairobi')
     desc.push('clouds')
@@ -29,12 +38,9 @@ const defaultLocal = () => {
   }
 }
 
-const clear = () => {
-  localStorage.clear()
-  defaultLocal()
-}
+defaultLocal()
 
-clear()
+sessionStorage.setItem("greetings", "Hello there!");
 
 const addAndDisplay = (() => {
   document.getElementById('formsearch').onsubmit = function () {

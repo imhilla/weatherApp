@@ -15,7 +15,7 @@ function showPage() {
 
 var myVar;
 function preLoad() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 2000);
 }
 
 preLoad()
