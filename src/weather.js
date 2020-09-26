@@ -4,22 +4,22 @@ const weather = (() => {
       const locations = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 3)));
       const units = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 1)));
       const actualUnit = units[units.length - 1];
-      var actualLocation = locations[locations.length - 1];
+      const actualLocation = locations[locations.length - 1];
       let unitOfMes;
       let inCOrF;
-      if (actualUnit == 'celsius') {
+      if (actualUnit === 'celsius') {
         unitOfMes = 'units=metric';
         inCOrF = '°C';
-      } else if (actualUnit == 'fahrenheit') {
+      } else if (actualUnit === 'fahrenheit') {
         unitOfMes = 'units=imperial';
         inCOrF = 'F';
       }
       const feedBack = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${actualLocation}&${unitOfMes}&appid=a575049b71ed2b88749a1f238d71e50b`, { mode: 'cors' });
       const weatherData = await feedBack.json();
-      var data = weatherData;
+      const data = weatherData;
       const dataDesc = data.weather[0];
-      let store = JSON.parse(localStorage.getItem('desc'));
-      let says = dataDesc.description;
+      const store = JSON.parse(localStorage.getItem('desc'));
+      const says = dataDesc.description;
       store.push(says);
       localStorage.setItem('desc', JSON.stringify(store));
       const weatherContainer = document.getElementById('weather-container');
