@@ -31,7 +31,7 @@
   </div>
 </nav>
 
-<body onload="myFunction()" style="margin:0;">
+<body onload="preLoad()" style="margin:0;">
   <div id="loader"></div>
   <div style="display:none;" id="myDiv" class="animate-bottom">
     <div id="container-div">
@@ -42,18 +42,6 @@
     </div>
   </div>
   <script src="main.js"></script>
-  <script>
-    var myVar;
-
-    function myFunction() {
-      myVar = setTimeout(showPage, 3000);
-    }
-
-    function showPage() {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("myDiv").style.display = "block";
-    }
-  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
