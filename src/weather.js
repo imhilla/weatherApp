@@ -1,6 +1,6 @@
 const weather = (() => {
   async function getLocation() {
-    const locations = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 2)))
+    const locations = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 3)))
     const units = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length - 1)))
     const actualUnit = units[units.length - 1]
     var actualLocation = locations[locations.length - 1]
@@ -17,6 +17,10 @@ const weather = (() => {
     const weatherData = await feedBack.json();
     var data = weatherData
     const dataDesc = data.weather[0]
+    let store = JSON.parse(localStorage.getItem('desc'));
+    let says = dataDesc.description
+    store.push(says)
+    localStorage.setItem('desc', JSON.stringify(store));
     const weatherContainer = document.getElementById('weather-container')
     const subContainer = document.createElement('div')
     subContainer.setAttribute('class', 'sub-container')
