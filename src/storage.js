@@ -19,6 +19,7 @@ localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
 const defaultLocal = () => {
+  localStorage.clear()
   if (unit.length < 1) {
     unit.push('celsius')
     searchLocation.push('Nairobi')
