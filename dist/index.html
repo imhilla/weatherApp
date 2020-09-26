@@ -9,37 +9,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand logo" href="#">Weather App</a>
 
-<body>
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand logo" href="#">Weather App</a>
+  <div id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0" id='formsearch'>
+      <input class="form-control mr-sm-2" type="search" placeholder="City name" aria-label="Search" id="textsearch">
 
-    <div id="navbarSupportedContent">
-      <form class="form-inline my-2 my-lg-0" id='formsearch'>
-        <input class="form-control mr-sm-2" type="search" placeholder="City name" aria-label="Search" id="textsearch">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="celsius">
+        <label class="form-check-label" for="inlineRadio1">Celsius</label>
+      </div>
 
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="celsius">
-          <label class="form-check-label" for="inlineRadio1">Celsius</label>
-        </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="fahrenheit">
+        <label class="form-check-label" for="inlineRadio2">Fahrenheit</label>
+      </div>
 
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="fahrenheit">
-          <label class="form-check-label" for="inlineRadio2">Fahrenheit</label>
-        </div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id='searchSubmit'>Search</button>
+    </form>
+  </div>
+</nav>
 
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id='searchSubmit'>Search</button>
-      </form>
-    </div>
-  </nav>
-  <div id="container-div">
-    <img src="#" class="giphy-img" />
-    <div id="weather-container" class="weather-container">
+<body onload="myFunction()" style="margin:0;">
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="container-div">
+      <img src="#" class="giphy-img" />
+      <div id="weather-container" class="weather-container">
 
+      </div>
     </div>
   </div>
-
   <script src="main.js"></script>
+  <script>
+    var myVar;
+
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
