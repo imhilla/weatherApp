@@ -25,7 +25,6 @@ const clear = () => {
 };
 
 clear();
-
 const defaultLocal = () => {
   if (unit.length < 1) {
     unit.push('celsius');
@@ -36,11 +35,8 @@ const defaultLocal = () => {
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
 };
-
 defaultLocal();
-
 sessionStorage.setItem('greetings', 'Hello there!');
-
 const addAndDisplay = (() => {
   document.getElementById('formsearch').onsubmit = () => {
     const text = document.getElementById('textsearch').value;
@@ -56,10 +52,8 @@ const addAndDisplay = (() => {
     }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   };
-
   return {
     defaultLocal,
   };
-
 })();
 export default addAndDisplay;
