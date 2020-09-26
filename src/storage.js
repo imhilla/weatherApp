@@ -19,8 +19,7 @@ localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
 const defaultLocal = () => {
-  if (unit.length < 1) {
-    localStorage.clear()
+  if (localStorage.length < 1) {
     unit.push('celsius')
     searchLocation.push('Nairobi')
     desc.push('clouds')
@@ -29,7 +28,13 @@ const defaultLocal = () => {
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
 }
-defaultLocal()
+
+const clear = () => {
+  localStorage.clear()
+  defaultLocal()
+}
+
+clear()
 
 const addAndDisplay = (() => {
   document.getElementById('formsearch').onsubmit = function () {
