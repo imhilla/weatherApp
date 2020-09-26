@@ -12,16 +12,18 @@ localStorage.setItem('unit', JSON.stringify(unit));
 JSON.parse(localStorage.getItem('unit'));
 
 const desc = localStorage.getItem('desc')
-? JSON.parse(localStorage.getItem('desc'))
-: [];
+  ? JSON.parse(localStorage.getItem('desc'))
+  : [];
 
 localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
 const defaultLocal = () => {
-  if (searchLocation.length < 1 && unit.length < 1) {
+  if (unit.length < 1) {
     unit.push('celsius')
     searchLocation.push('Nairobi')
+    desc.push('clouds')
+    localStorage.setItem('desc', JSON.stringify(desc));
     localStorage.setItem('unit', JSON.stringify(unit));
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
@@ -43,7 +45,6 @@ const addAndDisplay = (() => {
     }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
     window.location.reload
-    // return false
   }
 
   return {
