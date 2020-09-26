@@ -35,7 +35,6 @@ const weather = (() => {
       <div class='d-flex'><h5>Pressure: </h5><p>${data.main.pressure} mbar</p></div>`
       weatherContainer.append(subContainer)
     } catch (err) {
-      // catches errors both in fetch and response.json
       alert(err);
     }
   }
