@@ -12,9 +12,10 @@ localStorage.setItem('unit', JSON.stringify(unit));
 JSON.parse(localStorage.getItem('unit'));
 
 const defaultLocal = () => {
-  if (searchLocation.length < 1) {
+  if (searchLocation.length < 1 && unit.length < 1) {
+    unit.push('celsius')
     searchLocation.push('Nairobi')
-    console.log(searchLocation)
+    localStorage.setItem('unit', JSON.stringify(unit));
     localStorage.setItem('searched', JSON.stringify(searchLocation));
   }
 }
@@ -35,6 +36,7 @@ const addAndDisplay = (() => {
     }
     localStorage.setItem('searched', JSON.stringify(searchLocation));
     window.location.reload
+    // return false
   }
 
   return {
