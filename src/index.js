@@ -4,7 +4,6 @@ import weather from './weather'
 import { getLocation } from './weather';
 import giphy from './giphy'
 
-
 const divLoad = document.getElementById('onLoad')
 divLoad.addEventListener('load', preLoad)
 

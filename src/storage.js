@@ -18,7 +18,6 @@ const desc = localStorage.getItem('desc')
 localStorage.setItem('desc', JSON.stringify(desc));
 JSON.parse(localStorage.getItem('desc'));
 
-
 const clear = () => {
   if (sessionStorage.length == 0) {
     localStorage.clear()
