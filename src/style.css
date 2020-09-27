@@ -1,0 +1,119 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-top: 10px solid blue;
+  border-right: 10px solid green;
+  border-bottom: 10px solid red;
+  border-left: 10px solid pink;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+.container-div {
+  position: relative;
+}
+
+.giphy-img {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  overflow-y: hidden;
+  z-index: -20;
+}
+
+.sub-container p {
+  margin-left: 5px;
+}
+
+.weather-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  height: auto;
+}
+
+.sub-container {
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-color: black;
+  padding: 2em;
+  margin-top: 2em;
+  opacity: 0.6;
+}
